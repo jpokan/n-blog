@@ -1,0 +1,14 @@
+<template>
+  <div
+    class="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-200"
+  >
+    <div class="container mx-auto px-5">
+      <Navbar class="md:relative bottom-0 left-0 right-0 fixed z-50" />
+      <Nuxt />
+    </div>
+  </div>
+</template>
+
+<script>
+export default {}
+</script>

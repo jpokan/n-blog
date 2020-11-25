@@ -1,0 +1,28 @@
+<template>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    height="100%"
+    viewBox="0 0 512 512"
+  >
+    <circle cx="256" cy="256" r="48" />
+    <circle cx="416" cy="256" r="48" />
+    <circle cx="96" cy="256" r="48" />
+  </svg>
+</template>
+<style scoped>
+/* @keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+svg:nth-child(1) {
+  animation: appear;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+} */
+</style>

@@ -1,0 +1,48 @@
+@font-face {
+	font-family: 'Proxima Soft';
+	font-weight: 200;
+	font-display: swap;
+	src: url('~assets/fonts/ProximaSoft-Thin.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Proxima Soft';
+	font-weight: 300;
+	font-display: swap;
+	src: url('~assets/fonts/ProximaSoft-Light.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Proxima Soft';
+	font-weight: 400;
+	font-display: swap;
+	src: url('~assets/fonts/ProximaSoft-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Proxima Soft';
+	font-weight: 500;
+	font-display: swap;
+	src: url('~assets/fonts/ProximaSoft-Medium.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Proxima Soft';
+	font-weight: 600;
+	font-display: swap;
+	src: url('~assets/fonts/ProximaSoft-SemiBold.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Proxima Soft';
+	font-weight: 700;
+	font-display: swap;
+	src: url('~assets/fonts/ProximaSoft-Bold.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Proxima Soft';
+	font-weight: 800;
+	font-display: swap;
+	src: url('~assets/fonts/ProximaSoft-ExtraBold.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Proxima Soft';
+	font-weight: 900;
+	font-display: swap;
+	src: url('~assets/fonts/ProximaSoft-Black.ttf') format('truetype');
+}
