@@ -5,8 +5,8 @@
       class="hover:text-pink-500 dark:hover:text-yellow-500 transition-colors duration-300 relative"
       @click="toggleColorMode()"
     >
-      <Moon id="moon" class="fill-current absolute w-5 h-5" />
-      <Sun id="sun" class="fill-current w-5 h-5" />
+      <SvgMoon id="moon" class="fill-current absolute w-5 h-5" />
+      <SvgSun id="sun" class="fill-current w-5 h-5" />
     </button>
   </div>
 </template>

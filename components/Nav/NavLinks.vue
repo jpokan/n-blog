@@ -11,7 +11,7 @@
       >
         <NuxtLink
           class="hover:text-pink-500 dark:hover:text-yellow-500 transition-colors duration-300"
-          :to="link"
+          :to="`/${link}`"
           >{{ link }}</NuxtLink
         >
       </li>
@@ -24,7 +24,7 @@
             href="https://github.com/jpokan"
             target="_blank"
             class="hover:text-pink-500 dark:hover:text-yellow-500 transition-colors duration-300"
-            ><Github class="fill-current"
+            ><SvgGithub class="fill-current"
           /></a>
         </li>
         <li class="menu-links" @click="$emit('link-click')">
@@ -35,7 +35,7 @@
             href="https://codepen.io/jpokan"
             target="_blank"
             class="hover:text-pink-500 dark:hover:text-yellow-500 transition-colors duration-300"
-            ><Codepen class="fill-current"
+            ><SvgCodepen class="fill-current"
           /></a>
         </li>
         <li class="menu-links" @click="$emit('link-click')">
@@ -46,7 +46,7 @@
             href="https://twitter.com/jpokan"
             target="_blank"
             class="hover:text-lightblue-500 transition-colors duration-300"
-            ><Twitter class="fill-current"
+            ><SvgTwitter class="fill-current"
           /></a>
         </li>
       </div>
@@ -85,7 +85,6 @@ export default {
         {
           yPercent: 50,
           opacity: 0,
-          onStart: () => this.$emit('link-animation-start'),
         },
         {
           yPercent: 0,
@@ -93,6 +92,7 @@ export default {
           delay: 0.25,
           duration: 0.3,
           stagger: 0.1,
+          onStart: () => this.$emit('link-animation-start'),
           onComplete: () => this.$emit('link-animation-complete'),
         }
       )

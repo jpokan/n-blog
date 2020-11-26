@@ -53,6 +53,13 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    [
+      'storyblok-nuxt',
+      {
+        accessToken: process.env.STORYBLOK_SPACE_TOKEN,
+        cacheProvider: 'memory',
+      },
+    ],
     // https://go.nuxtjs.dev/axios
     // '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa

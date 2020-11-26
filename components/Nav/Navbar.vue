@@ -1,35 +1,32 @@
 <template>
   <div>
-    <Menu
+    <NavMenu
       ref="Menu"
       v-model="menuOpened"
       @show-menu-start="animating = true"
-      @show-menu-complete="animating = false"
       @hide-menu-start="
         animating = true
         menuOpened = false
       "
-      @hide-menu-complete="
-        animating = false
-        menuOpened = false
-      "
+      @hide-menu-complete="animating = false"
       @link-animation-off="animating = false"
-      @link-animation-on="animating = true"
     />
-    <div class="relative p-5 gap-5 flex justify-between">
-      <Logo
+    <div
+      class="relative p-5 gap-5 flex justify-between dark:bg-gray-900 bg-gray-100"
+    >
+      <NavLogo
         @logo-click="
           menuOpened = false
           animating = false
         "
       />
-      <Burger
+      <NavBurger
         v-model="menuOpened"
         :animating="animating"
         @burger-click="toggleMenuStatus"
       />
-      <Links class="hidden md:flex" />
-      <Switcher />
+      <NavLinks class="hidden md:flex" />
+      <NavSwitcher />
     </div>
   </div>
 </template>

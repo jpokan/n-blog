@@ -1,8 +1,9 @@
 <template>
   <button
+    ref="Burger"
     :disabled="animating"
     aria-label="Open or close menu"
-    class="hover:text-pink-500 dark:hover:text-yellow-500 transition-colors duration-300 md:hidden relative"
+    class="hover:text-pink-500 dark:hover:text-yellow-500 transition:all duration-300 md:hidden relative"
     @click="$emit('burger-click')"
   >
     <SvgBurger
@@ -29,6 +30,12 @@ export default {
     },
   },
   watch: {
+    animating() {
+      const burger = this.$refs.Burger
+      this.animating
+        ? burger.classList.add('opacity-20')
+        : burger.classList.remove('opacity-20')
+    },
     value() {
       if (this.value) {
         this.hideBurger()
