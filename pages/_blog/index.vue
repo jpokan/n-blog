@@ -1,5 +1,5 @@
 <template>
-  <BlogPosts :posts="posts" />
+  <BlogPosts :posts="blok" />
 </template>
 
 <script>
@@ -16,11 +16,10 @@ export default {
         },
       })
       .then((res) => {
-        return { posts: res.data.stories }
+        return { blok: res.data.stories }
       })
       .catch((res) => {
         if (!res.response) {
-          // console.error(res)
           context.error({
             statusCode: 404,
             message: 'Failed to receive content form api',
