@@ -1,9 +1,9 @@
 <template>
   <div class="flex items-center justify-center h-full">
-    <ul
+    <div
       class="flex flex-col md:flex-row md:gap-5 md:text-xl font-semibold text-6xl text-left"
     >
-      <li
+      <div
         v-for="link in links"
         :key="link"
         class="menu-links"
@@ -14,9 +14,9 @@
           :to="`/${link}`"
           >{{ link }}</NuxtLink
         >
-      </li>
+      </div>
       <div class="flex gap-5 justify-start md:p-0 md:w-24 py-5 w-40">
-        <li class="menu-links" @click="$emit('link-click')">
+        <div class="menu-links" @click="$emit('link-click')">
           <a
             rel="noopener"
             title="Github"
@@ -26,8 +26,8 @@
             class="hover:text-pink-500 dark:hover:text-yellow-500 transition-colors duration-300"
             ><SvgGithub class="fill-current"
           /></a>
-        </li>
-        <li class="menu-links" @click="$emit('link-click')">
+        </div>
+        <div class="menu-links" @click="$emit('link-click')">
           <a
             rel="noopener"
             title="Codepen"
@@ -37,8 +37,8 @@
             class="hover:text-pink-500 dark:hover:text-yellow-500 transition-colors duration-300"
             ><SvgCodepen class="fill-current"
           /></a>
-        </li>
-        <li class="menu-links" @click="$emit('link-click')">
+        </div>
+        <div class="menu-links" @click="$emit('link-click')">
           <a
             rel="noopener"
             title="Twitter"
@@ -48,9 +48,9 @@
             class="hover:text-lightblue-500 transition-colors duration-300"
             ><SvgTwitter class="fill-current"
           /></a>
-        </li>
+        </div>
       </div>
-    </ul>
+    </div>
   </div>
 </template>
 
