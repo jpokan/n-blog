@@ -5,7 +5,7 @@
     <div
       v-for="post in posts"
       :key="post.id"
-      class="relative flex flex-col justify-end dark:bg-gray-800 bg-gray-200 rounded-lg group dark:hover:bg-yellow-500 hover:bg-pink-500 duration-100 transition-all hover:text-gray-100 dark:hover:text-gray-900"
+      class="post-enter opacity-0 transform scale-90 relative flex flex-col justify-end dark:bg-gray-800 bg-gray-200 rounded-lg group dark:hover:bg-yellow-500 hover:bg-pink-500 duration-100 transition-all hover:text-gray-100 dark:hover:text-gray-900"
     >
       <div
         v-if="post.content.thumbnail.filename"
@@ -18,7 +18,7 @@
             {{ post.name }}</NuxtLink
           >
           <div
-            class="text-sm font-normal flex justify-between text-gray-400 dark:group-hover:text-gray-900 group-hover:text-gray-100"
+            class="text-sm font-normal flex justify-between text-gray-500 dark:group-hover:text-gray-900 group-hover:text-gray-100"
           >
             <p>
               {{
@@ -30,8 +30,8 @@
               }}
             </p>
             <NuxtLink class="font-semibold underline" :to="`/${post.full_slug}`"
-              >Read</NuxtLink
-            >
+              ><span class="flex items-center gap-1">Read <SvgForward /></span>
+            </NuxtLink>
           </div>
         </div>
       </div>
@@ -40,12 +40,29 @@
 </template>
 
 <script>
+import { gsap } from 'gsap'
 export default {
   props: {
     posts: {
       type: Array,
       default: () => [],
     },
+  },
+  mounted() {
+    gsap.fromTo(
+      '.post-enter',
+      {
+        opacity: 0,
+        scale: 0.9,
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        stagger: 0.25,
+        duration: 0.25,
+        ease: 'slow(0.7, 0.7, false)',
+      }
+    )
   },
 }
 </script>
