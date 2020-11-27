@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute top-0 bottom-0 right-0 left-0">
+  <div class="absolute inset-0">
     <div
       class="flex items-center justify-center h-screen flex-col text-center p-5"
     >

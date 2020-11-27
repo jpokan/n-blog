@@ -10,7 +10,7 @@
       <div
         v-if="post.content.thumbnail.filename"
         :style="`background-image: url(${post.content.thumbnail.filename})`"
-        class="h-40 dark:bg-gray-800 bg-gray-200 bg-center bg-cover bg-no-repeat rounded-md relative mt-1 mx-1 md:mt-2 md:mx-2"
+        class="h-40 dark:bg-gray-800 bg-gray-200 bg-center bg-cover bg-no-repeat rounded-md relative mt-1 mx-1 shadow-inner"
       ></div>
       <div>
         <div class="relative text-xl p-5 h-36 flex flex-col justify-between">

@@ -12,6 +12,11 @@ module.exports = {
   // dark: 'class',
   darkMode: 'class',
   theme: {
+    extend: {
+      screens: {
+        xs: '420px',
+      },
+    },
     colors: {
       gray: colors.blueGray,
       pink: colors.pink,
@@ -29,12 +34,6 @@ module.exports = {
         'Roboto',
         '"Helvetica Neue"',
         'Arial',
-        '"Noto Sans"',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Noto Color Emoji"',
       ],
     },
   },

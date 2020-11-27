@@ -1,7 +1,7 @@
 <template>
   <div
     id="menu"
-    class="fixed top-0 bottom-0 left-0 right-0 bg-gray-100 dark:bg-gray-900 opacity-0 md:hidden"
+    class="fixed inset-0 bg-gray-100 dark:bg-gray-900 opacity-0 md:hidden"
   >
     <NavLinks
       :is-opened="value"
