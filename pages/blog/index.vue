@@ -1,19 +1,21 @@
 <template>
-  <BlogPosts :posts="blok" />
+  <div>
+    <BlogHeader title="Blog Posts" class="text-pink-500 dark:text-yellow-500" />
+    <BlogPosts :posts="blok" />
+  </div>
 </template>
 
 <script>
 export default {
+  layout: 'blog',
   asyncData(context) {
+    const version = context.isDev ? 'draft' : 'published'
     return context.app.$storyapi
       .get('cdn/stories', {
-        version: 'draft',
+        version,
+        is_startpage: false,
         startsWith: 'blog/',
-        filter_query: {
-          component: {
-            not_in: 'Blank',
-          },
-        },
+        per_page: 10,
       })
       .then((res) => {
         return { blok: res.data.stories }
@@ -25,7 +27,6 @@ export default {
             message: 'Failed to receive content form api',
           })
         } else {
-          // console.error(res.response.data)
           context.error({
             statusCode: res.response.status,
             message: res.response.data,
