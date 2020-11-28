@@ -8,9 +8,9 @@
 <script>
 export default {
   layout: 'blog',
-  async asyncData(context) {
+  asyncData(context) {
     const version = context.isDev ? 'draft' : 'published'
-    return await context.app.$storyapi
+    return context.app.$storyapi
       .get('cdn/stories', {
         version,
         is_startpage: false,
