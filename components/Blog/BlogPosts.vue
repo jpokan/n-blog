@@ -21,13 +21,7 @@
             class="text-sm font-normal flex justify-between text-gray-500 dark:group-hover:text-gray-900 group-hover:text-gray-100"
           >
             <p>
-              {{
-                new Date(post.created_at).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })
-              }}
+              {{ createdAt(post) }}
             </p>
             <NuxtLink class="font-semibold underline" :to="`/${post.full_slug}`"
               ><span class="flex items-center gap-1">Read <SvgForward /></span>
@@ -63,6 +57,17 @@ export default {
         ease: 'slow(0.7, 0.7, false)',
       }
     )
+  },
+  beforeDestroy() {},
+  methods: {
+    createdAt(post) {
+      const date = new Date(post.created_at).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      })
+      return date
+    },
   },
 }
 </script>

@@ -4,9 +4,9 @@
   >
     <div class="container mx-auto px-5">
       <NavBar class="md:relative bottom-0 left-0 right-0 fixed z-50" />
-      <BlogSpacer />
+      <BlogSpacer key="top" />
       <Nuxt />
-      <BlogSpacer />
+      <BlogSpacer key="bottom" />
     </div>
   </div>
 </template>
