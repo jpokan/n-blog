@@ -1,16 +1,15 @@
 <template>
   <div v-editable="blok" class="max-w-2xl mx-auto">
     <BlogHeader class="text-gray-400" title="Blog Post" />
-
     <div class="mb-5">
       <img
-        class="rounded-lg"
+        class="rounded-lg min-w-full"
         :src="blok.thumbnail.filename"
         :alt="blok.thumbnail.alt"
       />
     </div>
     <h1
-      class="rounded-md p-5 text-2xl font-bold text-pink-500 dark:text-yellow-500"
+      class="rounded-md p-5 text-3xl md:text-5xl font-semibold text-pink-500 dark:text-yellow-500"
     >
       {{ name }}
     </h1>
@@ -23,13 +22,14 @@
         })
       }}
     </p>
-    <p class="p-5 text-gray-500">{{ blok.description }}</p>
-    <p class="font-medium leading-8 p-5">
-      {{ blok.content }}
+    <p v-if="blok.summary" class="p-5 text-lg">
+      <span class="font-bold">Summary:</span> {{ blok.summary }}
     </p>
-    <p class="font-medium leading-8 p-5">
-      {{ blok.markdown }}
-    </p>
+    <div
+      v-if="blok.markdown"
+      class="p-5 min-w-full prose max-w-prose md:prose-lg text-gray-700 dark:text-gray-100"
+      v-html="$md.render(blok.markdown)"
+    ></div>
     <BlogBackButton class="md:hidden" />
     <div class="h-5"></div>
     <div class="h-8"></div>
@@ -52,3 +52,5 @@ export default {
   },
 }
 </script>
+
+<style scoped></style>

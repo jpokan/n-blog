@@ -15,20 +15,14 @@
       ></div>
       <div>
         <div class="relative text-xl p-5 h-36 flex flex-col justify-between">
-          <p>
-            <NuxtLink :to="`/${post.full_slug}`" class="font-semibold">
-              {{ post.name }}
-            </NuxtLink>
-          </p>
+          <p class="font-semibold">{{ post.name }}</p>
           <div
             class="text-sm font-normal flex justify-between text-gray-500 dark:group-hover:text-gray-900 group-hover:text-gray-100"
           >
-            <p>
-              {{ createdAt(post) }}
-            </p>
-            <NuxtLink class="font-semibold underline" :to="`/${post.full_slug}`"
-              ><span class="flex items-center gap-1">Read<SvgForward /></span>
-            </NuxtLink>
+            <p>{{ publishedAt(post) }}</p>
+            <span class="flex items-center gap-1 font-semibold underline"
+              >Read<SvgForward
+            /></span>
           </div>
         </div>
       </div>
@@ -55,16 +49,16 @@ export default {
       {
         opacity: 1,
         scale: 1,
-        stagger: 0.15,
-        duration: 0.25,
+        stagger: 0.1,
+        duration: 0.2,
         ease: 'slow(0.7, 0.7, false)',
       }
     )
   },
   beforeDestroy() {},
   methods: {
-    createdAt(post) {
-      const date = new Date(post.created_at).toLocaleDateString('en-US', {
+    publishedAt(post) {
+      const date = new Date(post.published_at).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
         day: 'numeric',

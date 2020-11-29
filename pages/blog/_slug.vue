@@ -1,14 +1,17 @@
 <template>
-  <Post
-    :blok="story.content"
-    :published="story.created_at"
-    :name="story.name"
-  />
+  <div>
+    <BlogSpacer key="top" />
+    <BlogPost
+      :blok="story.content"
+      :published="story.published_at"
+      :name="story.name"
+    />
+    <BlogSpacer key="bottom" />
+  </div>
 </template>
 
 <script>
 export default {
-  layout: 'blog',
   asyncData(context) {
     const version =
       context.query._storyblok || context.isDev ? 'draft' : 'published'
@@ -18,7 +21,6 @@ export default {
         version,
       })
       .then((res) => {
-        // console.log(res.data)
         return res.data
       })
       .catch((res) => {

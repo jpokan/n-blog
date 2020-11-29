@@ -1,13 +1,14 @@
 <template>
   <div>
+    <BlogSpacer key="top" />
     <BlogHeader title="Blog Posts" class="text-pink-500 dark:text-yellow-500" />
     <BlogPosts :posts="blok" />
+    <BlogSpacer key="bottom" />
   </div>
 </template>
 
 <script>
 export default {
-  layout: 'blog',
   asyncData(context) {
     const version = context.isDev ? 'draft' : 'published'
     return context.app.$storyapi
