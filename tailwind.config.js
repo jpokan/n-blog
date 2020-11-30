@@ -5,39 +5,120 @@
  ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
  */
 const colors = require('tailwindcss/colors')
+
 module.exports = {
-  // experimental: {
-  //   darkModeVariant: true,
-  // },
-  // dark: 'class',
   darkMode: 'class',
   theme: {
     extend: {
+      colors: {
+        gray: colors.blueGray,
+        pink: colors.pink,
+        yellow: colors.yellow,
+        lightblue: colors.lightBlue,
+      },
       screens: {
         xs: '420px',
       },
-    },
-    colors: {
-      gray: colors.blueGray,
-      pink: colors.pink,
-      yellow: colors.yellow,
-      lightblue: colors.lightBlue,
-    },
-    fontFamily: {
-      sans: [
-        'Proxima Soft',
-        'ui-sans-serif',
-        'system-ui',
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
-        'Roboto',
-        '"Helvetica Neue"',
-        'Arial',
-      ],
+      fontFamily: {
+        sans: [
+          'Proxima Soft',
+          'ui-sans-serif',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          '"Helvetica Neue"',
+          'Arial',
+        ],
+      },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            // used for markdown-it-attr (data-name="")
+            pre: {
+              position: 'relative',
+              paddingTop: '1.25rem',
+              paddingBottom: '1.25rem',
+              paddingLeft: '1.5rem',
+              paddingRight: '1.5rem',
+            },
+            'pre code::before': {
+              content: 'attr(data-name)',
+              position: 'absolute',
+              right: '0.5rem',
+              top: '0.125rem',
+              color: theme('colors.gray.400'),
+            },
+            a: {
+              color: theme('colors.gray.700'),
+              transition: 'color 150ms',
+              '&:hover': {
+                color: theme('colors.pink.500'),
+              },
+            },
+          },
+        },
+        dark: {
+          css: {
+            color: theme('colors.gray.100'),
+            a: {
+              color: theme('colors.gray.100'),
+              transition: 'color 150ms',
+              '&:hover': {
+                color: theme('colors.yellow.500'),
+              },
+            },
+
+            h1: {
+              color: theme('colors.gray.100'),
+            },
+            h2: {
+              color: theme('colors.gray.100'),
+            },
+            h3: {
+              color: theme('colors.gray.100'),
+            },
+            h4: {
+              color: theme('colors.gray.100'),
+            },
+            h5: {
+              color: theme('colors.gray.100'),
+            },
+            h6: {
+              color: theme('colors.gray.100'),
+            },
+
+            strong: {
+              color: theme('colors.gray.100'),
+            },
+
+            code: {
+              color: theme('colors.gray.100'),
+            },
+
+            blockquote: {
+              color: theme('colors.gray.100'),
+            },
+
+            'ol > li::before': {
+              fontWeight: '400',
+              color: theme('colors.gray.300'),
+            },
+
+            figcaption: {
+              color: theme('colors.gray.100'),
+            },
+          },
+        },
+      }),
     },
   },
-  variants: {},
+  variants: {
+    extend: {
+      typography: ['dark'],
+    },
+  },
   plugins: [require('@tailwindcss/typography')],
   purge: {
     // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css

@@ -32,7 +32,10 @@ export default {
   css: [
     '@/assets/css/fonts.css', // Serve custom fonts from server.
     // '@/assets/css/prism-material-oceanic.css',
-    { src: '~/node_modules/highlight.js/styles/srcery.css', lang: 'css' },
+    {
+      src: '~/node_modules/highlight.js/styles/hopscotch.css',
+      lang: 'css',
+    },
   ],
   router: {
     linkExactActiveClass: 'dark:text-yellow-500 text-pink-500', // using tailwind styles
@@ -46,7 +49,7 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
+    // '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     // https://color-mode.nuxtjs.org
@@ -62,6 +65,7 @@ export default {
         injected: true,
         use: [
           // 'markdown-it-prism',
+          'markdown-it-attrs',
           'markdown-it-highlightjs',
         ],
       },

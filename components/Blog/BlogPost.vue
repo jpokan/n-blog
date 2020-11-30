@@ -9,11 +9,11 @@
       />
     </div>
     <h1
-      class="rounded-md p-5 text-3xl md:text-5xl font-semibold text-pink-500 dark:text-yellow-500"
+      class="rounded-md md:px-5 py-5 text-3xl md:text-5xl font-semibold text-pink-500 dark:text-yellow-500"
     >
       {{ title }}
     </h1>
-    <p class="p-5 text-gray-500">
+    <p class="md:p-5 text-gray-500">
       {{
         new Date(published).toLocaleDateString('en-US', {
           year: 'numeric',
@@ -22,12 +22,12 @@
         })
       }}
     </p>
-    <p v-if="blok.summary" class="p-5 text-lg">
+    <p v-if="blok.summary" class="md:p-5 py-10 md:text-xl">
       <span class="font-bold">Summary:</span> {{ blok.summary }}
     </p>
     <div
       v-if="blok.markdown"
-      class="p-5 min-w-full prose max-w-prose md:prose-lg"
+      class="md:p-5 min-w-full prose max-w-none md:prose-lg dark:prose-dark"
       v-html="$md.render(blok.markdown)"
     ></div>
     <BlogBackButton class="md:hidden" />
@@ -45,7 +45,7 @@ export default {
     },
     published: {
       type: String,
-      default: 'Published at date',
+      default: 'Published date',
     },
     title: {
       type: String,
