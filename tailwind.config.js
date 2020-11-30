@@ -9,28 +9,28 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   darkMode: 'class',
   theme: {
+    colors: {
+      gray: colors.blueGray,
+      pink: colors.pink,
+      yellow: colors.yellow,
+      lightblue: colors.lightBlue,
+    },
+    fontFamily: {
+      sans: [
+        'Proxima Soft',
+        'ui-sans-serif',
+        'system-ui',
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+      ],
+    },
     extend: {
-      colors: {
-        gray: colors.blueGray,
-        pink: colors.pink,
-        yellow: colors.yellow,
-        lightblue: colors.lightBlue,
-      },
       screens: {
         xs: '420px',
-      },
-      fontFamily: {
-        sans: [
-          'Proxima Soft',
-          'ui-sans-serif',
-          'system-ui',
-          '-apple-system',
-          'BlinkMacSystemFont',
-          '"Segoe UI"',
-          'Roboto',
-          '"Helvetica Neue"',
-          'Arial',
-        ],
       },
       typography: (theme) => ({
         DEFAULT: {

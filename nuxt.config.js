@@ -31,7 +31,6 @@ export default {
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     '@/assets/css/fonts.css', // Serve custom fonts from server.
-    // '@/assets/css/prism-material-oceanic.css',
     {
       src: '~/node_modules/highlight.js/styles/hopscotch.css',
       lang: 'css',
@@ -49,7 +48,7 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    // '@nuxtjs/eslint-module',
+    '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     // https://color-mode.nuxtjs.org
@@ -63,11 +62,7 @@ export default {
       {
         html: true,
         injected: true,
-        use: [
-          // 'markdown-it-prism',
-          'markdown-it-attrs',
-          'markdown-it-highlightjs',
-        ],
+        use: ['markdown-it-attrs', 'markdown-it-highlightjs'],
       },
     ],
     [
@@ -82,7 +77,7 @@ export default {
     // https://go.nuxtjs.dev/pwa
     // '@nuxtjs/pwa',
   ],
-  // for tailwind darkmode
+  // Disable @nuxt/color-mode classSuffix to work with TailwindCSS 1.8+
   colorMode: {
     classSuffix: '',
   },
@@ -92,6 +87,5 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     transpile: ['gsap'],
-    // },
   },
 }
