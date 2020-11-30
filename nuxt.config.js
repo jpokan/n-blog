@@ -31,9 +31,8 @@ export default {
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     '@/assets/css/fonts.css', // Serve custom fonts from server.
-    // '@/assets/css/hopscotch.css',
     // '@/assets/css/prism-material-oceanic.css',
-    { src: '~/node_modules/highlight.js/styles/hopscotch.css', lang: 'css' },
+    { src: '~/node_modules/highlight.js/styles/srcery.css', lang: 'css' },
   ],
   router: {
     linkExactActiveClass: 'dark:text-yellow-500 text-pink-500', // using tailwind styles
@@ -61,7 +60,10 @@ export default {
       {
         html: true,
         injected: true,
-        use: ['markdown-it-highlightjs'],
+        use: [
+          // 'markdown-it-prism',
+          'markdown-it-highlightjs',
+        ],
       },
     ],
     [

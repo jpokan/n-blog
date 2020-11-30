@@ -1,9 +1,9 @@
 <template>
   <div v-editable="blok" class="max-w-2xl mx-auto">
     <BlogHeader class="text-gray-400" title="Blog Post" />
-    <div class="mb-5">
+    <div v-if="blok.thumbnail.filename" class="mb-5">
       <img
-        class="rounded-lg min-w-full"
+        class="rounded-lg min-w-full max-h-60 sm:max-h-80 md:max-h-96 object-cover"
         :src="blok.thumbnail.filename"
         :alt="blok.thumbnail.alt"
       />
@@ -11,7 +11,7 @@
     <h1
       class="rounded-md p-5 text-3xl md:text-5xl font-semibold text-pink-500 dark:text-yellow-500"
     >
-      {{ name }}
+      {{ title }}
     </h1>
     <p class="p-5 text-gray-500">
       {{
@@ -27,7 +27,7 @@
     </p>
     <div
       v-if="blok.markdown"
-      class="p-5 min-w-full prose max-w-prose md:prose-lg text-gray-700 dark:text-gray-100"
+      class="p-5 min-w-full prose max-w-prose md:prose-lg"
       v-html="$md.render(blok.markdown)"
     ></div>
     <BlogBackButton class="md:hidden" />
@@ -45,9 +45,11 @@ export default {
     },
     published: {
       type: String,
+      default: 'Published at date',
     },
-    name: {
+    title: {
       type: String,
+      default: 'Title',
     },
   },
 }

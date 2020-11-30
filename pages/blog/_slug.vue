@@ -4,7 +4,7 @@
     <BlogPost
       :blok="story.content"
       :published="story.published_at"
-      :name="story.name"
+      :title="story.name"
     />
     <BlogSpacer key="bottom" />
   </div>

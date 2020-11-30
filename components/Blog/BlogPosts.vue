@@ -6,7 +6,7 @@
       v-for="post in posts"
       :key="post.id"
       :to="`/${post.full_slug}`"
-      class="post-enter opacity-0 transform scale-90 relative flex flex-col justify-end dark:bg-gray-800 bg-gray-200 rounded-lg group dark:hover:bg-yellow-500 hover:bg-pink-500 duration-100 transition-all hover:text-gray-100 dark:hover:text-gray-900"
+      class="post-enter opacity-0 transform scale-90 relative flex flex-col justify-end dark:bg-gray-800 bg-gray-200 rounded-lg group dark:hover:bg-yellow-500 hover:bg-pink-500 duration-300 transition-all hover:text-gray-100 dark:hover:text-gray-900"
     >
       <div
         v-if="post.content.thumbnail.filename"
