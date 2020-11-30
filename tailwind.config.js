@@ -35,7 +35,7 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            // used for markdown-it-attr (data-name="")
+            // used for markdown-it-attr {data=""}
             pre: {
               position: 'relative',
               paddingTop: '1.25rem',
@@ -44,11 +44,14 @@ module.exports = {
               paddingRight: '1.5rem',
             },
             'pre code::before': {
-              content: 'attr(data-name)',
+              content: 'attr(data)',
               position: 'absolute',
               right: '0.5rem',
               top: '0.125rem',
               color: theme('colors.gray.400'),
+            },
+            strong: {
+              fontWeight: '700',
             },
             a: {
               color: theme('colors.gray.700'),
@@ -90,7 +93,8 @@ module.exports = {
             },
 
             strong: {
-              color: theme('colors.gray.100'),
+              fontWeight: '700',
+              color: theme('colors.yellow.500'),
             },
 
             code: {
