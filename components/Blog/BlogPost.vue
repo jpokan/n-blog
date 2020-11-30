@@ -3,6 +3,7 @@
     <BlogHeader class="text-gray-400" title="Blog Post" />
     <div v-if="blok.thumbnail.filename" class="mb-5">
       <img
+        :class="`object-${blok.thumbnail_position}`"
         class="rounded-lg min-w-full max-h-60 sm:max-h-80 md:max-h-96 object-cover"
         :src="blok.thumbnail.filename"
         :alt="blok.thumbnail.alt"
