@@ -8,7 +8,7 @@
         to="/"
         class="hover:text-pink-500 dark:hover:text-yellow-500 transition-colors duration-300"
         ><span class="flex gap-2 items-center">
-          <SvgBack />
+          <SvgBack class="w-4 fill-current" />
           Go back to home
         </span></NuxtLink
       >

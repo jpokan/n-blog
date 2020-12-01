@@ -1,17 +1,9 @@
 <template>
-  <div class="mx-auto max-w-2xl">
+  <div class="relative">
     <BlogSpacer key="top" />
     <BlogHeader title="Blog Posts" class="text-pink-500 dark:text-yellow-500" />
     <BlogPosts :posts="blok" />
-    <div class="flex gap-2 justify-center w-full p-5 flex-wrap">
-      <NuxtLink
-        v-for="page in pages"
-        :key="page"
-        class="w-6 text-center font-semibold rounded bg-gray-200 hover:bg-pink-500 hover:text-gray-100 dark:bg-gray-800 dark:hover:bg-yellow-500 dark:hover:text-gray-900"
-        :to="`/blog/page/${page}`"
-        >{{ page }}</NuxtLink
-      >
-    </div>
+    <BlogPagination :pages="pages" />
     <BlogSpacer key="bottom" />
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div>
     <NavMenu
       ref="Menu"
       v-model="menuOpened"
