@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="">
     <NavMenu
       ref="Menu"
       v-model="menuOpened"
@@ -12,7 +12,7 @@
       @link-animation-off="animating = false"
     />
     <div
-      class="relative p-5 gap-5 flex justify-between dark:bg-gray-900 bg-gray-100"
+      class="p-5 md:p-10 gap-5 flex justify-between dark:bg-gray-900 bg-gray-100"
     >
       <NavLogo
         @logo-click="

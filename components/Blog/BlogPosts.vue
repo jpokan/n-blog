@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 mx-auto max-w-2xl">
+  <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
     <NuxtLink
       v-for="post in posts"
       :key="post.id"
