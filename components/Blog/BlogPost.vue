@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok" class="max-w-2xl mx-auto">
+  <div v-editable="blok" class="max-w-3xl mx-auto">
     <BlogHeader class="text-gray-400" title="Blog Post" />
     <div v-if="blok.thumbnail.filename" class="mb-5">
       <img

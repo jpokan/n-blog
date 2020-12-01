@@ -1,6 +1,6 @@
 <template>
   <div
-    class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+    class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 mx-auto max-w-6xl"
   >
     <NuxtLink
       v-for="post in posts"
@@ -15,7 +15,7 @@
         class="h-40 dark:bg-gray-800 bg-gray-200 bg-cover bg-no-repeat rounded-md relative mt-1 mx-1 shadow-inner"
       ></div>
       <div>
-        <div class="relative text-xl p-5 h-36 flex flex-col justify-between">
+        <div class="text-xl p-5 h-36 flex flex-col justify-between">
           <p class="font-semibold">{{ post.name }}</p>
           <div
             class="text-sm font-normal flex justify-between text-gray-500 dark:group-hover:text-gray-900 group-hover:text-gray-100"

@@ -3,7 +3,7 @@
     <BlogSpacer key="top" />
     <BlogHeader title="Blog Posts" class="text-pink-500 dark:text-yellow-500" />
     <BlogPosts :posts="blok" />
-    <div class="flex justify-center w-full p-5">
+    <div class="flex justify-center w-full p-5 flex-wrap">
       <NuxtLink
         v-for="page in pages"
         :key="page"
@@ -19,7 +19,7 @@
 <script>
 export default {
   asyncData(context) {
-    const perPage = 2
+    const perPage = 6
     const page = context.params.page
     const version = context.isDev ? 'draft' : 'published'
     return context.app.$storyapi
@@ -32,7 +32,10 @@ export default {
       })
       .then((res) => {
         if (res.data.stories.length > 0) {
-          const pages = Math.round(res.total / perPage)
+          const pages =
+            res.total % perPage === 0
+              ? Math.floor(res.total / perPage)
+              : Math.floor(res.total / perPage) + 1
           return { blok: res.data.stories, perPage, pages }
         } else {
           return context.error({
@@ -54,11 +57,6 @@ export default {
           })
         }
       })
-  },
-  data() {
-    return {
-      currentPage: null,
-    }
   },
 }
 </script>
