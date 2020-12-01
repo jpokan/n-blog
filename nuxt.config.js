@@ -31,16 +31,16 @@ export default {
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     '@/assets/css/fonts.css', // Serve custom fonts from server.
-    {
-      src: '~/node_modules/highlight.js/styles/hopscotch.css',
-      lang: 'css',
-    },
+    // {
+    //   src: '~/node_modules/highlight.js/styles/hopscotch.css',
+    //   lang: 'css',
+    // },
   ],
   router: {
     linkExactActiveClass: 'dark:text-yellow-500 text-pink-500', // using tailwind styles
   },
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ['~/plugins/gsap-extras.js'],
+  plugins: ['~/plugins/gsap-extras.js', '~/plugins/highlightjs.js'],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -53,18 +53,20 @@ export default {
     '@nuxtjs/tailwindcss',
     // https://color-mode.nuxtjs.org
     '@nuxtjs/color-mode',
-  ],
-
-  // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: [
     [
       '@nuxtjs/markdownit',
       {
         html: true,
         injected: true,
-        use: ['markdown-it-attrs', 'markdown-it-highlightjs'],
+        use: [
+          'markdown-it-attrs',
+          // 'markdown-it-highlightjs'
+        ],
       },
     ],
+  ],
+  // Modules (https://go.nuxtjs.dev/config-modules)
+  modules: [
     [
       'storyblok-nuxt',
       {
@@ -86,6 +88,6 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    transpile: ['gsap'],
+    transpile: ['gsap', 'highlight.js'],
   },
 }

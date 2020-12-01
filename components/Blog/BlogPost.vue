@@ -34,6 +34,7 @@
     </p>
     <div
       v-if="blok.markdown"
+      ref="Post"
       class="md:p-5 min-w-full prose max-w-none md:prose-lg dark:prose-dark"
       v-html="$md.render(blok.markdown)"
     ></div>
@@ -57,6 +58,21 @@ export default {
     title: {
       type: String,
       default: 'Title',
+    },
+  },
+  mounted() {
+    this.styleCode()
+  },
+  updated() {
+    this.styleCode()
+  },
+  methods: {
+    styleCode() {
+      const post = this.$refs.Post
+      const codeArray = post.querySelectorAll('code')
+      codeArray.forEach((element) => {
+        this.$highlight(element)
+      })
     },
   },
 }
