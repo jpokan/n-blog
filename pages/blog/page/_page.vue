@@ -3,8 +3,14 @@
     <BlogSpacer key="top" />
     <BlogHeader title="Blog Posts" class="text-pink-500 dark:text-yellow-500" />
     <BlogPosts :posts="blok" />
-    <div class="w-full text-center p-5">
-      <NuxtLink to="/blog/page/2">Page 2</NuxtLink>
+    <div class="flex justify-center w-full p-5">
+      <NuxtLink
+        v-for="page in pages"
+        :key="page"
+        class="mx-2 font-semibold"
+        :to="`/blog/page/${page}`"
+        >{{ page }}</NuxtLink
+      >
     </div>
     <BlogSpacer key="bottom" />
   </div>
@@ -13,6 +19,7 @@
 <script>
 export default {
   asyncData(context) {
+    const perPage = 2
     const page = context.params.page
     const version = context.isDev ? 'draft' : 'published'
     return context.app.$storyapi
@@ -21,11 +28,12 @@ export default {
         is_startpage: false,
         startsWith: 'blog/',
         page,
-        per_page: 1,
+        per_page: perPage,
       })
       .then((res) => {
         if (res.data.stories.length > 0) {
-          return { blok: res.data.stories }
+          const pages = Math.round(res.total / perPage)
+          return { blok: res.data.stories, perPage, pages }
         } else {
           return context.error({
             statusCode: 404,
@@ -46,6 +54,11 @@ export default {
           })
         }
       })
+  },
+  data() {
+    return {
+      currentPage: null,
+    }
   },
 }
 </script>
