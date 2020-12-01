@@ -3,7 +3,13 @@
     <BlogHeader class="text-gray-400" title="Blog Post" />
     <div v-if="blok.thumbnail.filename" class="mb-5">
       <img
-        :class="`object-${blok.thumbnail_position}`"
+        :class="
+          blok.thumbnail_position === 'top'
+            ? 'object-top'
+            : blok.thumbnail_position === 'bottom'
+            ? 'object-bottom'
+            : 'object-center'
+        "
         class="rounded-lg min-w-full max-h-60 sm:max-h-80 md:max-h-96 object-cover"
         :src="blok.thumbnail.filename"
         :alt="blok.thumbnail.alt"
@@ -23,7 +29,7 @@
         })
       }}
     </p>
-    <p v-if="blok.summary" class="md:p-5 py-10 md:text-xl">
+    <p v-if="blok.summary" class="md:p-5 py-10 md:text-lg">
       <span class="font-bold">Summary:</span> {{ blok.summary }}
     </p>
     <div
