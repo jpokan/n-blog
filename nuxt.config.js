@@ -31,10 +31,6 @@ export default {
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     '@/assets/css/fonts.css', // Serve custom fonts from server.
-    // {
-    //   src: '~/node_modules/highlight.js/styles/hopscotch.css',
-    //   lang: 'css',
-    // },
   ],
   router: {
     linkExactActiveClass: 'dark:text-yellow-500 text-pink-500', // using tailwind styles
@@ -48,11 +44,14 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    // '@nuxtjs/eslint-module',
+    '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     // https://color-mode.nuxtjs.org
     '@nuxtjs/color-mode',
+  ],
+  // Modules (https://go.nuxtjs.dev/config-modules)
+  modules: [
     [
       '@nuxtjs/markdownit',
       {
@@ -64,9 +63,6 @@ export default {
         ],
       },
     ],
-  ],
-  // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: [
     [
       'storyblok-nuxt',
       {

@@ -68,11 +68,14 @@ export default {
   },
   methods: {
     styleCode() {
+      // Highlight code blocks if exists
       const post = this.$refs.Post
-      const codeArray = post.querySelectorAll('code')
-      codeArray.forEach((element) => {
-        this.$highlight(element)
-      })
+      if (post !== undefined) {
+        const codeArray = post.querySelectorAll('code')
+        codeArray.forEach((element) => {
+          this.$highlight(element)
+        })
+      }
     },
   },
 }
