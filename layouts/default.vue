@@ -8,7 +8,9 @@
       <NavBar class="md:sticky md:top-0 bottom-0 left-0 right-0 fixed z-50" />
       <Nuxt />
     </div>
-    <div class="fixed bottom-0 p-5">Flakes: {{ flakesCreated }}</div>
+    <div class="fixed bottom-0 p-5 font-semibold">
+      Flakes: {{ flakesCreated }}
+    </div>
   </div>
 </template>
 
@@ -18,9 +20,9 @@ export default {
     return { snowFlakes: [], flakesCreated: 0 }
   },
   watch: {
-    $route() {
-      this.removeFlake()
-    },
+    // $route() {
+    //   this.removeFlake()
+    // },
   },
   mounted() {},
   methods: {
