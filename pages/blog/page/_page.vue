@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div class="max-w-2xl relative mx-auto">
     <BlogSpacer key="top" />
     <BlogHeader title="Blog Posts" class="text-pink-500 dark:text-yellow-500" />
     <BlogPosts :posts="blok" />

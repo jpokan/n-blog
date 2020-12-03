@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-2 justify-center w-full p-5 flex-wrap">
+  <div class="flex gap-2 justify-end w-full py-5 flex-wrap">
     <NuxtLink
       v-for="page in pages"
       :key="page"

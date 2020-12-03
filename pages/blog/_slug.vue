@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="">
     <BlogSpacer key="top" />
     <BlogPost
       :blok="story.content"
