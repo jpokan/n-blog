@@ -16,8 +16,8 @@ hljs.registerLanguage('shell', shell)
 
 export default ({ app }, inject) => {
   if (process.client) {
-    inject('highlight', (DOM) => {
-      hljs.highlightBlock(DOM)
+    inject('highlight', (codeBlock) => {
+      hljs.highlightBlock(codeBlock)
     })
   }
 }

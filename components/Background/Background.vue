@@ -1,13 +1,12 @@
 <template>
   <div class="w-full h-full fixed">
     <!-- Animating svgs go here -->
-    <div id="SvgCanvas" class="">
+    <div id="SvgCanvas">
       <SvgSnow
         v-for="item in snowFlakes"
         :id="item.id"
         :key="item.id"
-        :style="`transform: translate3d(${item.top}px,${item.left}px,0px)`"
-        class="snowflake w-6 h-6 fill-current text-gray-600 dark:text-gray-300 absolute -top-3 -left-3"
+        class="snowflake w-6 h-6 fill-current text-gray-300 dark:text-gray-200 absolute stroke-1 -top-3 -left-3"
       />
     </div>
   </div>
@@ -22,37 +21,38 @@ export default {
       default: () => [],
     },
   },
-  data() {
-    return {
-      leaf: 10,
-    }
-  },
   watch: {
     snowFlakes(event) {
-      const newFlakeId = `#${event[event.length - 1].id}`
-      this.$nextTick(() => this.appear(newFlakeId))
+      if (event.length >= 1) {
+        const lastFlake = event[event.length - 1]
+        this.$nextTick(() =>
+          this.appear(`#${lastFlake.id}`, lastFlake.top, lastFlake.left)
+        )
+      }
     },
   },
   mounted() {},
   methods: {
-    appear(newFlakeId) {
+    appear(newFlakeId, posX, posY) {
       const tl = gsap.timeline()
       tl.fromTo(
         newFlakeId,
         {
-          opacity: 0,
           scale: 0,
+          x: posX,
+          y: posY,
         },
         {
-          opacity: 1,
-          scale: 'random(1,1.5)',
+          duration: 0.5,
+          scale: 'random(0.5,5)',
         }
       ).to(
         newFlakeId,
         {
-          rotate: 'random(-360,360)',
-          duration: 'random(8,10)',
-          y: 'random(1800,1900)',
+          immediateRender: true,
+          rotate: 'random([-720,720,-360,360,-600,500,400])',
+          duration: 8,
+          y: '100vh',
         },
         '-=0.55'
       )
