@@ -6,7 +6,9 @@
     <Background v-model="selectedSvg" :snow-flakes="snowFlakes" />
 
     <div class="container mx-auto px-5 relative min-h-screen">
-      <NavBar class="md:relative bottom-0 left-0 right-0 fixed z-50" />
+      <NavBar
+        class="md:sticky md:top-0 bottom-0 left-0 right-0 fixed z-50 dark:bg-gray-900 bg-gray-100"
+      />
       <Nuxt />
     </div>
     <FlakeControls

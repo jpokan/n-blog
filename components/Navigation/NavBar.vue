@@ -11,9 +11,7 @@
       @hide-menu-complete="animating = false"
       @link-animation-off="animating = false"
     />
-    <div
-      class="p-5 md:p-10 gap-5 flex justify-between dark:bg-gray-900 bg-gray-100 md:bg-transparent md:dark:bg-transparent"
-    >
+    <div class="p-5 md:p-10 gap-5 flex justify-between">
       <NavLogo
         @logo-click="
           menuOpened = false
