@@ -1,21 +1,13 @@
 <template>
   <div class="w-full h-full fixed">
     <!-- Animating svgs go here -->
-    <div class="fixed p-5">
-      <button class="" @click="selectedSvg = 'svg-ball'">
-        <SvgBall class="w-6 h-6 fill-current" />
-      </button>
-      <button @click="selectedSvg = 'svg-snow'">
-        <SvgSnow class="w-6 h-6 fill-current" />
-      </button>
-    </div>
     <div id="SvgCanvas">
       <component
-        :is="Svg"
+        :is="value"
         v-for="item in snowFlakes"
         :id="item.id"
         :key="item.id"
-        class="snowflake w-6 h-6 fill-current text-gray-300 dark:text-gray-500 absolute stroke-1 -top-3 -left-3 opacity-0"
+        class="snowflake w-6 h-6 fill-current text-gray-200 dark:text-gray-800 absolute -top-6 -left-3 opacity-0"
       ></component>
     </div>
   </div>
@@ -36,15 +28,9 @@ export default {
       type: Array,
       default: () => [],
     },
-  },
-  data() {
-    return {
-      selectedSvg: 'svg-snow',
-    }
-  },
-  computed: {
-    Svg() {
-      return this.selectedSvg
+    value: {
+      type: String,
+      default: 'svg-snow',
     },
   },
   watch: {
@@ -63,7 +49,7 @@ export default {
       const tl = gsap.timeline()
       let duration = 8
       let easing = 'power1.out'
-      if (this.selectedSvg === 'svg-ball') {
+      if (this.value === 'svg-ball') {
         easing = 'bounce.out'
         duration = 3
       }
@@ -77,7 +63,7 @@ export default {
         {
           duration: 0.5,
           opacity: 1,
-          scale: 'random(0.5,5)',
+          scale: 'random(1,5)',
         }
       ).to(
         newFlakeId,
@@ -88,7 +74,7 @@ export default {
           ease: easing,
           y: '100vh',
         },
-        '-=0.55'
+        '-=0.5'
       )
     },
   },

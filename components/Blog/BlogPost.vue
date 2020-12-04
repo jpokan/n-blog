@@ -16,11 +16,11 @@
       />
     </div>
     <h1
-      class="rounded-md md:px-5 py-5 text-3xl md:text-5xl font-semibold text-pink-500 dark:text-yellow-500"
+      class="rounded-md md:p-5 text-3xl md:text-5xl font-semibold text-pink-500 dark:text-yellow-500"
     >
       {{ title }}
     </h1>
-    <p class="md:p-5 text-gray-500">
+    <p class="md:p-5 text-gray-500 dark:text-gray-300">
       {{
         new Date(published).toLocaleDateString('en-US', {
           year: 'numeric',
@@ -29,13 +29,13 @@
         })
       }}
     </p>
-    <p v-if="blok.summary" class="md:p-5 py-10 md:text-lg">
+    <p v-if="blok.summary" class="md:p-5 md:py-10 py-10 md:text-lg">
       <span class="font-bold">Summary:</span> {{ blok.summary }}
     </p>
     <div
       v-if="blok.markdown"
       ref="Post"
-      class="md:p-5 min-w-full prose max-w-none md:prose-lg dark:prose-dark"
+      class="md:p-5 md:py-10 min-w-full prose max-w-none md:prose-lg dark:prose-dark rounded-lg"
       v-html="$md.render(blok.markdown)"
     ></div>
     <BlogBackButton class="md:hidden" />

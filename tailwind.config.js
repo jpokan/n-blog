@@ -8,13 +8,15 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
   darkMode: 'class',
+  colors: {
+    transparent: 'transparent',
+    current: 'currentColor',
+    gray: colors.blueGray,
+    pink: colors.pink,
+    yellow: colors.yellow,
+    lightblue: colors.lightBlue,
+  },
   theme: {
-    colors: {
-      gray: colors.blueGray,
-      pink: colors.pink,
-      yellow: colors.yellow,
-      lightblue: colors.lightBlue,
-    },
     fontFamily: {
       sans: [
         'Proxima Soft',
@@ -71,6 +73,10 @@ module.exports = {
               '&:hover': {
                 color: theme('colors.yellow.500'),
               },
+            },
+
+            hr: {
+              borderColor: theme('colors.gray.700'),
             },
 
             h1: {

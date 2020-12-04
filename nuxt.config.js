@@ -41,12 +41,12 @@ export default {
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
   path: '~/components/Svg/',
-  ignore: ['**/Animate/*.vue'],
+  ignore: ['**/Animate/*.vue'], // Except this folder
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
+    // '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     // https://color-mode.nuxtjs.org
