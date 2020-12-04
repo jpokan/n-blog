@@ -1,7 +1,7 @@
 <template>
   <div class="w-full h-full fixed">
     <!-- Animating svgs go here -->
-    <div id="SvgCanvas">
+    <div id="FlakeCanvas">
       <component
         :is="value"
         v-for="item in snowFlakes"

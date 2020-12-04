@@ -3,7 +3,7 @@
     class="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-100"
     @click="createFlake($event, snowFlakes.length)"
   >
-    <Background v-model="selectedSvg" :snow-flakes="snowFlakes" />
+    <FlakeCanvas v-model="selectedSvg" :snow-flakes="snowFlakes" />
 
     <div class="container mx-auto px-5 relative min-h-screen">
       <NavBar

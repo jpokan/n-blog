@@ -13,18 +13,20 @@
     />
     <div class="p-5 md:p-10 gap-5 flex justify-between">
       <NavLogo
+        class="z-50"
         @logo-click="
           menuOpened = false
           animating = false
         "
       />
+      <NavLinks class="hidden md:flex" />
       <NavBurger
         v-model="menuOpened"
+        class="z-50"
         :animating="animating"
         @burger-click="toggleMenuStatus"
       />
-      <NavLinks class="hidden md:flex" />
-      <NavSwitcher />
+      <NavSwitcher class="z-50" />
     </div>
   </div>
 </template>

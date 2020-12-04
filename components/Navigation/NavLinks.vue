@@ -15,7 +15,7 @@
           >{{ link }}</NuxtLink
         >
       </div>
-      <div class="flex gap-5 justify-start md:p-0 md:w-24 py-5 w-40">
+      <div class="flex gap-5 md:gap-2 justify-start md:p-0 md:w-24 py-5 w-40">
         <div class="menu-links" @click="$emit('link-click')">
           <a
             rel="noopener"
