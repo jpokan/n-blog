@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-2xl relative mx-auto">
+  <div class="max-w-screen-md lg:px-5 relative mx-auto">
     <BlogSpacer key="top" />
     <BlogHeader title="Blog Posts" class="text-pink-500 dark:text-yellow-500" />
     <BlogPosts :posts="blok" />
@@ -24,6 +24,8 @@ export default {
       })
       .then((res) => {
         if (res.data.stories.length > 0) {
+          console.log(res)
+          // Calculate pages for pagination and return number of pages
           const pages =
             res.total % perPage === 0
               ? Math.floor(res.total / perPage)

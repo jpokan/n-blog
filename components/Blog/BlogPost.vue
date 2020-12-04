@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok" class="max-w-3xl mx-auto">
+  <div v-editable="blok" class="max-w-screen-md mx-auto">
     <BlogHeader class="text-gray-400" title="Blog Post" />
     <div v-if="blok.thumbnail.filename" class="mb-5">
       <img
@@ -16,19 +16,31 @@
       />
     </div>
     <h1
-      class="rounded-md md:p-5 text-3xl md:text-5xl font-semibold text-pink-500 dark:text-yellow-500"
+      class="rounded-md md:px-5 md:pb-2 md:pt-10 text-3xl md:text-5xl font-semibold text-pink-500 dark:text-yellow-500"
     >
       {{ title }}
     </h1>
-    <p class="md:p-5 text-gray-500 dark:text-gray-300">
+    <p
+      v-if="lastPublished"
+      class="py-2 md:px-5 text-gray-500 dark:text-gray-300"
+    >
+      Last updated:
       {{
-        new Date(published).toLocaleDateString('en-US', {
+        new Date(lastPublished).toLocaleDateString('en-US', {
           year: 'numeric',
           month: 'long',
           day: 'numeric',
         })
       }}
     </p>
+    <div class="flex flex-row md:px-5">
+      <span
+        v-for="tag in tags"
+        :key="tag"
+        class="px-1 bg-gray-200 rounded dark:bg-gray-800 mr-2"
+        >{{ tag }}</span
+      >
+    </div>
     <p v-if="blok.summary" class="md:p-5 md:py-10 py-10 md:text-lg">
       <span class="font-bold">Summary:</span> {{ blok.summary }}
     </p>
@@ -51,13 +63,17 @@ export default {
       type: Object,
       required: true,
     },
-    published: {
+    lastPublished: {
       type: String,
       default: 'Published date',
     },
     title: {
       type: String,
       default: 'Title',
+    },
+    tags: {
+      type: Array,
+      default: () => [],
     },
   },
   mounted() {

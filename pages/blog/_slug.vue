@@ -3,8 +3,9 @@
     <BlogSpacer key="top" />
     <BlogPost
       :blok="story.content"
-      :published="story.published_at"
+      :last-published="story.published_at"
       :title="story.name"
+      :tags="story.tag_list"
     />
     <BlogSpacer key="bottom" />
   </div>
