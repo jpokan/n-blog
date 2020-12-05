@@ -19,16 +19,19 @@ export default {
   },
   methods: {
     checkColorMode() {
-      // const mode = localStorage.getItem('nuxt-color-mode')
+      const mode = localStorage.getItem('nuxt-color-mode')
       const color = this.$colorMode.value
-      const unknown = this.$colorMode.unknown
+      // const unknown = this.$colorMode.unknown
 
-      if (unknown || color === 'light') {
+      if (mode === 'light') {
         this.showMoon()
         this.hideSun()
-      } else {
+      } else if (mode === 'dark') {
         this.showSun()
         this.hideMoon()
+      } else if (color === 'system') {
+        this.showMoon()
+        this.hideSun()
       }
     },
     toggleColorMode() {

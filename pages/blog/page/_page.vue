@@ -24,7 +24,6 @@ export default {
       })
       .then((res) => {
         if (res.data.stories.length > 0) {
-          console.log(res)
           // Calculate pages for pagination and return number of pages
           const pages =
             res.total % perPage === 0

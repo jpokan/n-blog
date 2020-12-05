@@ -1,5 +1,7 @@
 <template>
-  <div class="flex items-center justify-center h-full">
+  <div
+    class="flex items-center justify-center lg:justify-end h-full flex-auto px-5"
+  >
     <div
       class="flex flex-col md:flex-row md:gap-5 md:text-xl font-semibold text-6xl text-left"
     >
