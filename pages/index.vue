@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-screen-md mx-auto relative">
+  <div class="lg:max-w-none max-w-screen-md mx-auto relative">
     <Hero />
   </div>
 </template>

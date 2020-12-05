@@ -1,24 +1,31 @@
 <template>
   <div
+    class="text-gray-200 hover:text-pink-500 dark:text-gray-800 dark:hover:text-yellow-500"
     @mouseenter="renderEnter($event)"
     @mousemove="renderMagnet($event)"
     @mouseleave="renderLeave($event)"
   >
-    <h1
-      class="pointer-events-none flex items-center h-full w-full justify-start transition-transform transform duration-75"
+    <component
+      :is="`svg-${component}`"
+      class="fill-current pointer-events-none"
     >
-      {{ text }}
-    </h1>
-    <slot></slot>
+    </component>
   </div>
 </template>
 
 <script>
+import SvgSnow from '~/components/Svg/Animate/SvgSnow'
+import SvgBall from '~/components/Svg/Animate/SvgBall'
+
 export default {
+  components: {
+    SvgSnow,
+    SvgBall,
+  },
   props: {
-    text: {
+    component: {
       type: String,
-      default: '',
+      default: 'snow',
     },
     amount: {
       type: Number,
@@ -43,6 +50,7 @@ export default {
     enter(event) {
       event.target.style.transition = `${this.startSpeed}ms ease-out`
       this.mouseStart = { x: event.clientX, y: event.clientY }
+      console.log(event)
     },
     leave(event) {
       // Transition speed when mouse leave
