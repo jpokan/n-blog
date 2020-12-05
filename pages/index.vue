@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div class="max-w-screen-lg mx-auto">
     <Hero />
+    <div>Next thing goes here</div>
   </div>
 </template>
 
