@@ -34,6 +34,7 @@ export default {
   methods: {
     removeFlake() {
       this.snowFlakes = []
+      this.flakesCreated = 0
     },
     createFlake(event, length) {
       const newFlake = {

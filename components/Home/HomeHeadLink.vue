@@ -1,5 +1,6 @@
 <template>
-  <div
+  <a
+    :href="linkTo"
     @mouseenter="renderEnter($event)"
     @mousemove="renderMagnet($event)"
     @mouseleave="renderLeave($event)"
@@ -9,13 +10,16 @@
     >
       {{ text }}
     </h1>
-    <slot></slot>
-  </div>
+  </a>
 </template>
 
 <script>
 export default {
   props: {
+    linkTo: {
+      type: String,
+      default: '',
+    },
     text: {
       type: String,
       default: '',

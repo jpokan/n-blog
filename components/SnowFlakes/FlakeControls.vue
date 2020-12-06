@@ -2,19 +2,18 @@
   <div class="lg:block hidden">
     <FlakeMagnet
       :amount="0.4"
-      component="ball"
-      class="fixed bottom-20 right-0 cursor-pointer w-20 h-20 m-5"
-      @click.native="$emit('select-ball')"
-    >
-    </FlakeMagnet>
-    <FlakeMagnet
-      :amount="0.4"
       component="snow"
       class="fixed bottom-40 right-0 cursor-pointer w-20 h-20 m-5"
       @click.native="$emit('select-snow')"
     >
     </FlakeMagnet>
-
+    <FlakeMagnet
+      :amount="0.4"
+      component="ball"
+      class="fixed bottom-20 right-0 cursor-pointer w-20 h-20 m-5"
+      @click.native="$emit('select-ball')"
+    >
+    </FlakeMagnet>
     <div
       id="SvgControls"
       class="m-5 bottom-0 right-0 lg:grid grid-cols-1 gap-2 fixed w-20"

@@ -1,6 +1,6 @@
 <template>
-  <div
-    class="text-gray-200 hover:text-pink-500 dark:text-gray-800 dark:hover:text-yellow-500"
+  <button
+    class="text-gray-300 hover:text-pink-500 dark:text-gray-700 dark:hover:text-yellow-500"
     @mouseenter="renderEnter($event)"
     @mousemove="renderMagnet($event)"
     @mouseleave="renderLeave($event)"
@@ -10,7 +10,7 @@
       class="fill-current pointer-events-none"
     >
     </component>
-  </div>
+  </button>
 </template>
 
 <script>
@@ -50,7 +50,6 @@ export default {
     enter(event) {
       event.target.style.transition = `${this.startSpeed}ms ease-out`
       this.mouseStart = { x: event.clientX, y: event.clientY }
-      console.log(event)
     },
     leave(event) {
       // Transition speed when mouse leave
