@@ -1,6 +1,6 @@
 <template>
   <button
-    class="text-gray-300 hover:text-pink-500 dark:text-gray-700 dark:hover:text-yellow-500"
+    class="text-gray-200 hover:text-pink-500 dark:text-gray-800 dark:hover:text-yellow-500"
     @mouseenter="renderEnter($event)"
     @mousemove="renderMagnet($event)"
     @mouseleave="renderLeave($event)"

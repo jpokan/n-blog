@@ -66,7 +66,7 @@ export default {
   },
   data() {
     return {
-      links: ['blog', 'contact', 'photos', 'work'],
+      links: ['blog', 'contact', 'photos'],
     }
   },
   watch: {

@@ -4,9 +4,18 @@
     width="100%"
     height="100%"
     viewBox="0 0 512 512"
+    class="stroke-current"
   >
-    <path
-      d="M190.06,414,353.18,274.22a24,24,0,0,0,0-36.44L190.06,98c-15.57-13.34-39.62-2.28-39.62,18.22V395.82C150.44,416.32,174.49,427.38,190.06,414Z"
+    <polyline
+      points="268 112 412 256 268 400"
+      style="fill: none; stroke-linecap: round; stroke-width: 48px"
+    />
+    <line
+      x1="392"
+      y1="256"
+      x2="100"
+      y2="256"
+      style="fill: none; stroke-linecap: round; stroke-width: 48px"
     />
   </svg>
 </template>
