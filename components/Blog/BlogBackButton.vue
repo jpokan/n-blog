@@ -7,8 +7,8 @@
         class="h-8 flex items-center justify-center dark:bg-gray-800 bg-gray-200 rounded-md"
       >
         Back
-      </div></NuxtLink
-    >
+      </div>
+    </NuxtLink>
     <div class="h-5"></div>
     <div class="h-8"></div>
   </div>

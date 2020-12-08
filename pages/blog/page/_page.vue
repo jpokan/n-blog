@@ -10,15 +10,15 @@
 
 <script>
 export default {
-  asyncData(context) {
+  async asyncData(context) {
     const perPage = 6
     const page = context.params.page
     const version = context.isDev ? 'draft' : 'published'
-    return context.app.$storyapi
+    return await context.app.$storyapi
       .get('cdn/stories', {
         version,
         is_startpage: false,
-        startsWith: 'blog/',
+        starts_with: 'blog/',
         page,
         per_page: perPage,
       })

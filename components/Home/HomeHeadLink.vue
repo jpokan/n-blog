@@ -9,7 +9,7 @@
       class="pointer-events-none flex items-center h-full w-full justify-start transition-transform transform duration-75"
     >
       {{ text }}
-      <slot class="pointer-events-none"> </slot>
+      <slot class="pointer-events-none"></slot>
     </h1>
   </a>
 </template>

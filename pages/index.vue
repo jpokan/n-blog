@@ -1,10 +1,10 @@
 <template>
   <div class="lg:max-w-none max-w-screen-md mx-auto relative">
     <HomeHero />
-    <div class="md:px-10">
-      <HomeDescription id="description" />
-      <div id="dev" class="border h-screen pt-28">Featured posts</div>
-      <div id="arch" class="border h-screen pt-28">Featured projects</div>
+    <div class="sm:px-10">
+      <HomeDescription />
+      <HomeFeaturedDev :blok="blok" />
+      <HomeFeaturedArch />
     </div>
     <div class="p-5">
       <div class="h-8"></div>
@@ -14,6 +14,32 @@
 
 <script>
 export default {
+  async asyncData(context) {
+    const version = context.isDev ? 'draft' : 'published'
+    return await context.app.$storyapi
+      .get('cdn/stories', {
+        version,
+        is_startpage: false,
+        starts_with: 'dev/',
+        sort_by: 'position:desc',
+      })
+      .then((res) => {
+        return { blok: res.data.stories }
+      })
+      .catch((res) => {
+        if (!res.response) {
+          context.error({
+            statusCode: 404,
+            message: 'Failed to receive content form api',
+          })
+        } else {
+          context.error({
+            statusCode: res.response.status,
+            message: res.response.data,
+          })
+        }
+      })
+  },
   head() {
     return {
       title: 'Homepage',

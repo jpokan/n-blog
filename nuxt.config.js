@@ -69,6 +69,7 @@ export default {
       'storyblok-nuxt',
       {
         accessToken: process.env.STORYBLOK_SPACE_PREVIEW_TOKEN,
+        cache: 'auto',
         cacheProvider: 'memory',
       },
     ],

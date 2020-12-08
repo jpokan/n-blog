@@ -1,11 +1,7 @@
 <template>
-  <section class="my-20">
+  <section id="description" class="py-10">
     <div class="md:grid md:place-content-center md:h-screen">
-      <h4
-        class="font-semibold text-2xl md:text-3xl lg:text-4xl text-pink-500 dark:text-yellow-500"
-      >
-        Hi, I'm Jorge Po-Kan.
-      </h4>
+      <HomeHeadH4 text="Hi, I'm Jorge Po-Kan" />
       <p
         class="font-semibold text-4xl md:text-5xl lg:text-6xl xl:text-7xl mt-10 w-11/12"
       >
@@ -13,12 +9,18 @@
         tools.
       </p>
       <p
-        class="text-lg lg:text-2xl xl:text-3xl mt-5 text-gray-600 dark:text-gray-300 md:w-1/2"
+        class="text-lg lg:text-2xl xl:text-3xl mt-5 text-gray-600 dark:text-gray-300 lg:w-3/5"
       >
-        Love using VueJS, NuxtJS, TailwindCSS and serverless functions. <br />
-        I also enjoy doing JAMStack sites.
+        Love building things with VueJS, NuxtJS, TailwindCSS and serverless
+        functions.<br />
+        Fan of JAMstack sites.
       </p>
-      <div class="flex items-center">
+      <p
+        class="text-lg lg:text-2xl xl:text-3xl mt-5 text-gray-600 dark:text-gray-300 lg:w-3/5"
+      >
+        I am also an architect and designer.
+      </p>
+      <div class="flex items-center justify-end lg:justify-start">
         <HomeHeadLink
           link-to="#dev"
           text="Check my work"

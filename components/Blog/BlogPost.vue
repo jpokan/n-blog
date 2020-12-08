@@ -51,8 +51,7 @@
       v-html="$md.render(blok.markdown)"
     ></div>
     <BlogBackButton class="md:hidden" />
-    <div class="h-5"></div>
-    <div class="h-8"></div>
+    <div class="h-5 my-4"></div>
   </div>
 </template>
 

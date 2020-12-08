@@ -22,11 +22,11 @@
       <NavLinks class="hidden md:flex" />
       <NavBurger
         v-model="menuOpened"
-        class=""
+        class="z-10"
         :animating="animating"
         @burger-click="toggleMenuStatus"
       />
-      <NavSwitcher class="" />
+      <NavSwitcher class="z-10" />
     </div>
   </div>
 </template>
