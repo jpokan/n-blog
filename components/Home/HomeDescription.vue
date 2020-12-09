@@ -24,7 +24,7 @@
         <HomeHeadLink
           link-to="#dev"
           text="Check my work"
-          class="md:text-lg lg:text-xl xl:text-2xl mt-5 group flex items-center hover:bg-pink-500 dark:hover:bg-yellow-500"
+          class="underline md:text-lg lg:text-xl xl:text-2xl mt-5 group flex items-center hover:bg-pink-500 dark:hover:bg-yellow-500"
           ><SvgRight
             class="w-4 md:h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6 ml-2 rotate-90 group-hover:translate-y-2 transform transition-transform duration-300"
           />
