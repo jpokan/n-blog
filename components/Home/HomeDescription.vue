@@ -1,7 +1,7 @@
 <template>
   <section id="description" class="py-10">
     <div class="md:grid md:place-content-center md:h-screen">
-      <HomeHeadH4 text="Hi, I'm Jorge Po-Kan" />
+      <HomeHeadH2 text="Hi, I'm Jorge Po-Kan" />
       <p
         class="font-semibold text-4xl md:text-5xl lg:text-6xl xl:text-7xl mt-10 w-11/12"
       >

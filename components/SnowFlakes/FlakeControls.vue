@@ -1,6 +1,7 @@
 <template>
   <div class="lg:block hidden">
     <FlakeMagnet
+      aria-label="Toggle snow"
       :amount="0.4"
       component="snow"
       class="fixed bottom-40 right-0 cursor-pointer w-20 h-20 m-5"
@@ -8,6 +9,7 @@
     >
     </FlakeMagnet>
     <FlakeMagnet
+      aria-label="Toggle ball"
       :amount="0.4"
       component="ball"
       class="fixed bottom-20 right-0 cursor-pointer w-20 h-20 m-5"

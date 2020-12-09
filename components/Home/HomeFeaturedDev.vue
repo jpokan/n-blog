@@ -1,10 +1,10 @@
 <template>
   <section id="dev" class="min-h-screen py-10 md:py-28">
-    <h1
+    <h2
       class="font-bold text-2xl md:text-5xl text-center text-pink-500 dark:text-yellow-500 my-20"
     >
       WEB DEVELOPMENT
-    </h1>
+    </h2>
     <div class="relative mx-auto">
       <div
         class="grid grid-cols-1 gap-5 lg:gap-10 md:grid-cols-2 xl:grid-cols-3"
