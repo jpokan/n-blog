@@ -3,7 +3,7 @@
     <HomeHero />
     <div class="sm:px-10">
       <HomeDescription />
-      <HomeFeaturedDev :blok="blok" />
+      <HomeFeaturedDev :featured="featured" :other="other" />
       <HomeFeaturedArch />
     </div>
     <div class="p-5">
@@ -24,7 +24,14 @@ export default {
         sort_by: 'position:desc',
       })
       .then((res) => {
-        return { blok: res.data.stories }
+        const data = res.data.stories
+        const featured = data.filter(
+          (project) => project.content.featured === true
+        )
+        const other = data.filter(
+          (project) => project.content.featured === false
+        )
+        return { featured, other }
       })
       .catch((res) => {
         if (!res.response) {

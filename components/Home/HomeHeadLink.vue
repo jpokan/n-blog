@@ -6,7 +6,7 @@
     @mouseleave="renderLeave($event)"
   >
     <h1
-      class="pointer-events-none flex items-center h-full w-full justify-start transition-transform transform duration-75"
+      class="pointer-events-none flex items-center justify-start transition-transform duration-75"
     >
       {{ text }}
       <slot class="pointer-events-none"></slot>
@@ -46,15 +46,15 @@ export default {
   },
   methods: {
     enter(event) {
+      // Set transitions on the start for smoothness movement in parent and child
       event.target.style.transition = `${this.startSpeed}ms ease-out`
+      event.target.style.transition = event.target.childNodes[0].style.transition = `${this.endSpeed}ms cubic-bezier(0, 0.55, 0.45, 1)`
+
       this.mouseStart = { x: event.clientX, y: event.clientY }
     },
     leave(event) {
-      // Transition speed when mouse leave
-      event.target.style.transition = event.target.childNodes[0].style.transition = `${this.endSpeed}ms cubic-bezier(0, 0.55, 0.45, 1)`
-
       // Reset Button and Text position
-      event.target.style.transform = event.target.childNodes[0].style.transform = `translate(0px, 0px)`
+      event.target.style.transform = event.target.childNodes[0].style.transform = `translate3d(0px, 0px, 0px)`
     },
     magnet(event) {
       const amount = this.amount
@@ -91,11 +91,11 @@ export default {
       // Translate button, inverted values to make it follow mouse
       event.target.style.transform = `
         translate3d(${-newX}px, ${-newY}px, 0)
-      `
+			`
 
       // Translate inner text element
       event.target.childNodes[0].style.transform = `
-        translate3d(${newX * 0.6}px, ${newY * 0.6}px, 0)
+        translate3d(${newX * 0.65}px, ${newY * 0.65}px, 0px)
       `
     },
     renderMagnet(event) {

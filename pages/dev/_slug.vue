@@ -1,12 +1,7 @@
 <template>
   <div>
     <BlogSpacer key="top" />
-    <BlogPost
-      :blok="story.content"
-      :last-published="story.published_at"
-      :title="story.name"
-      :tags="story.tag_list"
-    />
+    <DevProject :blok="story" />
     <BlogSpacer key="bottom" />
   </div>
 </template>
@@ -18,7 +13,7 @@ export default {
       context.query._storyblok || context.isDev ? 'draft' : 'published'
 
     return context.app.$storyapi
-      .get(`cdn/stories/blog/${context.params.slug}`, {
+      .get(`cdn/stories/dev/${context.params.slug}`, {
         version,
       })
       .then((res) => {
@@ -63,3 +58,5 @@ export default {
   },
 }
 </script>
+
+<style></style>

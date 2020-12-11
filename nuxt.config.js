@@ -31,9 +31,10 @@ export default {
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     '@/assets/css/fonts.css', // Serve custom fonts from server.
+    '@/assets/css/tailwind.css',
   ],
   router: {
-    linkExactActiveClass: 'dark:text-yellow-500 text-pink-500', // using tailwind styles
+    linkActiveClass: 'dark:text-yellow-500 text-pink-500', // using tailwind styles
   },
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: ['~/plugins/gsap-extras.js', '~/plugins/highlightjs.js'],

@@ -20,12 +20,12 @@
     <HomeHeadLink
       link-to="#arch"
       text="+ ARCHITECT,"
-      class="font-bold text-5xl sm:text-7xl text-gray-500 dark:text-gray-500 hover:bg-pink-4dark:hover:bg-yellow-500"
+      class="font-bold text-5xl sm:text-7xl text-gray-500 hover:bg-pink-500 dark:hover:bg-yellow-500"
     />
     <HomeHeadLink
       link-to="#arch"
       text="DESIGNER"
-      class="font-bold text-5xl sm:text-7xl text-gray-500 dark:text-gray-500 hover:bg-pink-500 dark:hover:bg-yellow-500"
+      class="font-bold text-5xl sm:text-7xl text-gray-500 hover:bg-pink-500 dark:hover:bg-yellow-500"
     />
   </section>
 </template>
