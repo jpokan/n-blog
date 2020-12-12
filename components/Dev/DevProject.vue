@@ -23,7 +23,7 @@
       </div>
     </section>
     <section class="col-span-full xl:col-span-3">
-      <div class="flex justify-between">
+      <div class="flex flex-row justify-between">
         <h1
           class="text-4xl md:text-5xl font-semibold dark:text-yellow-500 text-pink-500"
         >
@@ -53,7 +53,7 @@
           </a>
         </ul>
       </div>
-      <h2 class="text-lg text-gray-500 my-5 text-right">
+      <h2 class="text-lg text-gray-500 my-5">
         {{ blok.content.summary }}
       </h2>
       <article
