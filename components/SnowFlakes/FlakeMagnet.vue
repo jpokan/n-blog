@@ -48,15 +48,15 @@ export default {
   },
   methods: {
     enter(event) {
+      // Set transitions on the start for smoothness movement in parent and child
       event.target.style.transition = `${this.startSpeed}ms ease-out`
+      event.target.style.transition = event.target.childNodes[0].style.transition = `${this.endSpeed}ms cubic-bezier(0, 0.55, 0.45, 1)`
+
       this.mouseStart = { x: event.clientX, y: event.clientY }
     },
     leave(event) {
-      // Transition speed when mouse leave
-      event.target.style.transition = event.target.childNodes[0].style.transition = `${this.endSpeed}ms cubic-bezier(0, 0.55, 0.45, 1)`
-
       // Reset Button and Text position
-      event.target.style.transform = event.target.childNodes[0].style.transform = `translate(0px, 0px)`
+      event.target.style.transform = event.target.childNodes[0].style.transform = `translate3d(0px, 0px, 0px)`
     },
     magnet(event) {
       const amount = this.amount

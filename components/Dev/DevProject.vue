@@ -20,6 +20,16 @@
           :src="image.filename"
           :alt="image.alt"
         />
+        <video
+          v-for="video in blok.content.videos"
+          :key="video.id"
+          :src="video.filename"
+          :alt="video.alt"
+          type="video/mp4"
+          loop
+          muted
+          autoplay
+        ></video>
       </div>
     </section>
     <section class="col-span-full xl:col-span-3">
@@ -54,7 +64,7 @@
         </ul>
       </div>
       <h2 class="text-lg text-gray-500 my-5">
-        {{ blok.content.summary }}
+        {{ blok.content.year }}
       </h2>
       <article
         class="prose md:prose-lg dark:prose-dark"

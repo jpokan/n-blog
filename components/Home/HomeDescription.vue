@@ -12,12 +12,8 @@
         class="text-lg lg:text-2xl xl:text-3xl mt-5 text-gray-600 dark:text-gray-300 lg:w-3/5"
       >
         Love building things with VueJS, NuxtJS, TailwindCSS and serverless
-        functions.<br />
-        Fan of JAMstack sites.
-      </p>
-      <p
-        class="text-lg lg:text-2xl xl:text-3xl mt-5 text-gray-600 dark:text-gray-300 lg:w-3/5"
-      >
+        functions. Fan of JAMstack sites.<br />
+        <br />
         I am also an architect and designer.
       </p>
       <div class="flex items-center justify-end lg:justify-start">

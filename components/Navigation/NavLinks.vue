@@ -17,7 +17,9 @@
           >{{ link }}</NuxtLink
         >
       </div>
-      <div class="flex gap-5 md:gap-2 justify-start md:p-0 md:w-24 py-5 w-40">
+      <div
+        class="flex flex-wrap gap-5 md:gap-2 justify-start md:p-0 md:w-32 py-5 w-40"
+      >
         <div class="menu-links" @click="$emit('link-click')">
           <a
             rel="noopener"
@@ -26,7 +28,7 @@
             href="https://github.com/jpokan"
             target="_blank"
             class="hover:text-pink-500 dark:hover:text-yellow-500 transition-colors duration-300"
-            ><SvgGithub class="fill-current"
+            ><SvgGithub class="fill-current w-10 md:w-6"
           /></a>
         </div>
         <div class="menu-links" @click="$emit('link-click')">
@@ -37,7 +39,7 @@
             href="https://codepen.io/jpokan"
             target="_blank"
             class="hover:text-pink-500 dark:hover:text-yellow-500 transition-colors duration-300"
-            ><SvgCodepen class="fill-current"
+            ><SvgCodepen class="fill-current w-10 md:w-6"
           /></a>
         </div>
         <div class="menu-links" @click="$emit('link-click')">
@@ -48,7 +50,18 @@
             href="https://twitter.com/jpokan"
             target="_blank"
             class="hover:text-lightblue-500 transition-colors duration-300"
-            ><SvgTwitter class="fill-current"
+            ><SvgTwitter class="fill-current w-10 md:w-6"
+          /></a>
+        </div>
+        <div class="menu-links" @click="$emit('link-click')">
+          <a
+            rel="noopener"
+            title="LinkedIn"
+            aria-label="LinkedIn"
+            href="https://www.linkedin.com/in/jorge-ou-16100a2b/"
+            target="_blank"
+            class="hover:text-pink-500 dark:hover:text-yellow-500 transition-colors duration-300"
+            ><SvgLinkedIn class="fill-current w-10 md:w-6"
           /></a>
         </div>
       </div>
@@ -66,7 +79,7 @@ export default {
   },
   data() {
     return {
-      links: ['blog', 'contact', 'photos'],
+      links: ['blog', 'contact'],
     }
   },
   watch: {
