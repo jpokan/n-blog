@@ -1,5 +1,10 @@
 <template>
   <div>
+    <SocialHead
+      :title="story.name"
+      :image="story.content.thumbnail.filename"
+      :description="story.content.summary"
+    />
     <BlogSpacer key="top" />
     <BlogPost
       :blok="story.content"
@@ -63,3 +68,7 @@ export default {
   },
 }
 </script>
+
+<style>
+@import '~/node_modules/highlight.js/styles/hopscotch.css';
+</style>
