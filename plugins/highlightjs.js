@@ -5,7 +5,6 @@ import css from 'highlight.js/lib/languages/css'
 import json from 'highlight.js/lib/languages/json'
 import bash from 'highlight.js/lib/languages/bash'
 import shell from 'highlight.js/lib/languages/shell'
-import 'highlight.js/styles/hopscotch.css'
 
 hljs.registerLanguage('javascript', javascript)
 hljs.registerLanguage('xml', xml)

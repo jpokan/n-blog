@@ -1,6 +1,8 @@
 <template>
-  <div class="h-80vh flex flex-col items-center justify-center md:mx-10">
-    <h1 class="font-semibold text-6xl md:text-7xl">Say Hello!</h1>
+  <div
+    class="h-80vh flex flex-col items-center justify-center text-center md:mx-10"
+  >
+    <h1 class="font-semibold text-6xl md:text-7xl">{{ message }}</h1>
     <label class="text-2xl my-5">E-mail:</label>
     <span
       ref="mail"
@@ -9,7 +11,6 @@
       @click="copy"
       >jol_ou@hotmail.com</span
     >
-    <span v-if="isCopied" class="my-5 text-2xl">Copied to clipboard!</span>
   </div>
 </template>
 
@@ -19,6 +20,15 @@ export default {
     return {
       isCopied: false,
     }
+  },
+  computed: {
+    message() {
+      if (this.isCopied) {
+        return 'Copied to clipboard!'
+      } else {
+        return 'Say Hello!'
+      }
+    },
   },
   methods: {
     copy() {
