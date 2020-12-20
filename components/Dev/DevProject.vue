@@ -2,10 +2,23 @@
   <div class="grid grid-cols-1 lg:grid-cols-8 gap-20 md:mx-10 md:my-40">
     <section class="col-span-full xl:col-span-5">
       <div class="bg-pink-500 dark:bg-yellow-500 xl:perspective mb-20">
-        <img
-          class="object-center object-cover w-full imagen shadow-xl transition-transform duration-500"
+        <video
+          v-if="thumbnailType(blok.content.thumbnail.filename) === 'video'"
           :src="blok.content.thumbnail.filename"
           :alt="blok.content.thumbnail.alt"
+          type="video/mp4"
+          loop
+          muted
+          autoplay
+          class="object-center object-cover w-full imagen shadow-xl transition-transform duration-500"
+          @mouseover="normalize($event)"
+          @mouseleave="perspective($event)"
+        />
+        <img
+          v-else
+          :src="blok.content.thumbnail.filename"
+          :alt="blok.content.thumbnail.alt"
+          class="object-center object-cover w-full imagen shadow-xl transition-transform duration-500"
           @mouseover="normalize($event)"
           @mouseleave="perspective($event)"
         />
@@ -83,6 +96,11 @@ export default {
     },
   },
   methods: {
+    thumbnailType(filename) {
+      const fileType = filename.substring(filename.lastIndexOf('.') + 1)
+      const type = fileType === 'mp4' ? 'video' : 'img'
+      return type
+    },
     normalize(event) {
       event.target.style.transform = 'rotateY(0deg)'
     },

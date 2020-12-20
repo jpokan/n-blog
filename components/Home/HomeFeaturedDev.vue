@@ -63,8 +63,18 @@
           :to="`/${project.full_slug}`"
           class="group shadow-lg flex flex-col justify-end rounded-lg lg:rounded-2xl group dark:bg-gray-800 bg-gray-200 transition-all hover:-translate-y-2 transform duration-300"
         >
+          <video
+            v-if="thumbnailType(project.content.thumbnail.filename) === 'video'"
+            :src="project.content.thumbnail.filename"
+            :alt="project.content.thumbnail.alt"
+            type="video/mp4"
+            loop
+            muted
+            autoplay
+            class="h-44 xl:h-60 object-cover object-left-top lg:rounded-2xl rounded-md mt-1 mx-1"
+          />
           <img
-            v-if="project.content.thumbnail.filename"
+            v-else
             :src="project.content.thumbnail.filename"
             :alt="project.content.thumbnail.alt"
             class="h-44 xl:h-60 object-cover object-left-top lg:rounded-2xl rounded-md mt-1 mx-1"
@@ -116,7 +126,13 @@ export default {
     },
   },
   computed: {},
-  methods: {},
+  methods: {
+    thumbnailType(filename) {
+      const fileType = filename.substring(filename.lastIndexOf('.') + 1)
+      const type = fileType === 'mp4' ? 'video' : 'img'
+      return type
+    },
+  },
 }
 </script>
 
