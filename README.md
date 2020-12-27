@@ -1,4 +1,13 @@
-# n-blog
+# Jpokan (n-blog)
+
+Personal portfolio site and blog using:
+- VueJS
+- NuxtJS
+- GSAP
+- TailwindCSS
+- Storyblok CMS
+
+After various weeks of learning and trying things, I decided to make this to prove my knowledge while looking for front end development positions (Dec. 2020)
 
 ## Build Setup
 
