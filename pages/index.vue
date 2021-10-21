@@ -4,7 +4,6 @@
     <div class="sm:px-10">
       <HomeDescription />
       <HomeFeaturedDev :featured="featured" :other="other" />
-      <HomeFeaturedArch />
     </div>
     <div class="p-5">
       <div class="h-8"></div>
