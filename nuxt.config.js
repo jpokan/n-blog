@@ -115,8 +115,6 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    // https://go.nuxtjs.dev/eslint
-    // '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     // https://color-mode.nuxtjs.org
@@ -143,10 +141,6 @@ export default {
         cacheProvider: 'memory',
       },
     ],
-    // https://go.nuxtjs.dev/axios
-    // '@nuxtjs/axios',
-    // https://go.nuxtjs.dev/pwa
-    // '@nuxtjs/pwa',
   ],
   // Disable @nuxt/color-mode classSuffix to work with TailwindCSS 1.8+
   colorMode: {
