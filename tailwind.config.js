@@ -7,6 +7,7 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
+  mode: 'jit',
   darkMode: 'class',
   theme: {
     colors: {
@@ -15,7 +16,7 @@ module.exports = {
       gray: colors.blueGray,
       pink: colors.pink,
       yellow: colors.yellow,
-      lightblue: colors.lightBlue,
+      sky: colors.sky,
     },
     fontFamily: {
       sans: [
