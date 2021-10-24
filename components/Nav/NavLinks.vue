@@ -49,7 +49,7 @@
             aria-label="Twitter"
             href="https://twitter.com/jpokan"
             target="_blank"
-            class="hover:text-lightblue-500 transition-colors duration-300"
+            class="hover:text-sky-500 transition-colors duration-300"
             ><SvgTwitter class="fill-current w-10 md:w-6"
           /></a>
         </div>
