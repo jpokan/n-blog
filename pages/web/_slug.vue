@@ -13,7 +13,7 @@ export default {
       context.query._storyblok || context.isDev ? 'draft' : 'published'
 
     return context.app.$storyapi
-      .get(`cdn/stories/dev/${context.params.slug}`, {
+      .get(`cdn/stories/web/${context.params.slug}`, {
         version,
       })
       .then((res) => {
