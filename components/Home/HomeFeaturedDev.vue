@@ -5,7 +5,7 @@
     >
       WEB DEVELOPMENT
     </h2>
-    <div class="relative mx-auto max-w-screen-lg my-10">
+    <div id="featured" class="relative mx-auto max-w-screen-lg my-10">
       <div
         class="grid grid-cols-1 gap-5 lg:gap-5 lg:grid-cols-2 justify-items-center"
       >
@@ -13,7 +13,7 @@
           v-for="project in featured"
           :key="project.id"
           :to="`/${project.full_slug}`"
-          class="group max-w-lg shadow-lg flex flex-col justify-end rounded-lg lg:rounded-2xl group dark:bg-gray-800 bg-gray-200 transition-all hover:-translate-y-2 transform duration-300"
+          class="shadow-lg flex flex-col justify-end rounded-lg lg:rounded-2xl group dark:bg-gray-800 bg-gray-200 transition-all hover:-translate-y-2 transform duration-300"
         >
           <img
             v-if="project.content.thumbnail.filename"
@@ -53,7 +53,7 @@
         </NuxtLink>
       </div>
     </div>
-    <div class="relative mx-auto max-w-screen-lg mt-20">
+    <div id="other" class="relative mx-auto max-w-screen-lg mt-20">
       <div
         class="grid grid-cols-1 gap-5 lg:gap-5 md:grid-cols-2 lg:grid-cols-3"
       >
@@ -61,7 +61,7 @@
           v-for="project in other"
           :key="project.id"
           :to="`/${project.full_slug}`"
-          class="group shadow-lg flex flex-col justify-end rounded-lg lg:rounded-2xl group dark:bg-gray-800 bg-gray-200 transition-all hover:-translate-y-2 transform duration-300"
+          class="shadow-lg flex flex-col justify-end rounded-lg lg:rounded-2xl group dark:bg-gray-800 bg-gray-200 transition-all hover:-translate-y-2 transform duration-300"
         >
           <video
             v-if="thumbnailType(project.content.thumbnail.filename) === 'video'"
@@ -71,7 +71,7 @@
             loop
             muted
             autoplay
-            class="h-44 xl:h-60 object-cover object-left-top lg:rounded-2xl rounded-md mt-1 mx-1"
+            class="h-44 xl:h-60 object-cover object-center lg:rounded-2xl rounded-md mt-1 mx-1"
           />
           <img
             v-else
@@ -128,12 +128,12 @@ export default {
   computed: {},
   methods: {
     thumbnailType(filename) {
-      const fileType = filename.substring(filename.lastIndexOf('.') + 1)
-      const type = fileType === 'mp4' ? 'video' : 'img'
-      return type
+      const fileType = filename.substring(filename.lastIndexOf(".") + 1);
+      const type = fileType === "mp4" ? "video" : "img";
+      return type;
     },
   },
-}
+};
 </script>
 
 <style></style>

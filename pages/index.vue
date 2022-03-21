@@ -14,51 +14,51 @@
 <script>
 export default {
   async asyncData(context) {
-    const version = context.isDev ? 'draft' : 'published'
+    const version = context.isDev ? "draft" : "published";
     return await context.app.$storyapi
-      .get('cdn/stories', {
+      .get("cdn/stories", {
         version,
         is_startpage: false,
-        starts_with: 'dev/',
-        sort_by: 'position:desc',
+        starts_with: "web/",
+        sort_by: "position:desc",
       })
       .then((res) => {
-        const data = res.data.stories
+        const data = res.data.stories;
         const featured = data.filter(
           (project) => project.content.featured === true
-        )
+        );
         const other = data.filter(
           (project) => project.content.featured === false
-        )
-        return { featured, other }
+        );
+        return { featured, other };
       })
       .catch((res) => {
         if (!res.response) {
           context.error({
             statusCode: 404,
-            message: 'Failed to receive content form api',
-          })
+            message: "Failed to receive content form api",
+          });
         } else {
           context.error({
             statusCode: res.response.status,
             message: res.response.data,
-          })
+          });
         }
-      })
+      });
   },
   head() {
     return {
-      title: 'Homepage',
+      title: "Homepage",
       meta: [
         {
-          name: 'description',
-          hid: 'description',
-          content: 'Homepage of jpokan website.',
+          name: "description",
+          hid: "description",
+          content: "Homepage of jpokan website.",
         },
       ],
-    }
+    };
   },
-}
+};
 </script>
 
 <style></style>
